@@ -1,0 +1,13 @@
+{
+  "name": "creativestyle/magesuite-back-in-stock-pwa-notifications",
+  "description": "Back In Stock integration with PWA push notifications",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageSuite\\BackInStockPwaNotifications\\": ""
+    }
+  }
+}
