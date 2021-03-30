@@ -1,0 +1,5 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="back_in_stock_subscription_entity" resource="default" engine="innodb">
+        <column name="pwa_device_id" xsi:type="int" nullable="true" unsigned="true" comment="PWA device id" />
+    </table>
+</schema>
