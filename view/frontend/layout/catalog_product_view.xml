@@ -10,12 +10,14 @@
                     <argument name="show_decline_button" xsi:type="boolean">false</argument>
                 </arguments>
                 
-                <container name="product.backinstock.subscription.or_separator.container" htmlTag="p" htmlClass="cs-product-stock-subscription__or" as="push.notification.hotspot.after">
-                    <block class="Magento\Framework\View\Element\Text" name="product.backinstock.subscription.or_separator">
-                        <arguments>
-                            <argument name="text" xsi:type="string" translate="true">OR</argument>
-                        </arguments>
-                    </block>
+                <container name="product.backinstock.subscription.or.container" htmlTag="div" htmlClass="cs-product-stock-subscription__or" as="push.notification.hotspot.after">
+                    <container name="product.backinstock.subscription.or_separator.container" htmlTag="p" htmlClass="cs-product-stock-subscription__or-separator">
+                        <block class="Magento\Framework\View\Element\Text" name="product.backinstock.subscription.or_separator">
+                            <arguments>
+                                <argument name="text" xsi:type="string" translate="true">OR</argument>
+                            </arguments>
+                        </block>
+                    </container>
                 </container>
             </block>
         </referenceContainer>
