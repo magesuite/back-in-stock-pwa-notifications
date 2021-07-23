@@ -67,8 +67,7 @@ class PushSubscriptionCreator
         \Magento\Store\Model\App\Emulation $emulation,
         \MageSuite\BackInStock\Service\Subscription\ProductResolver $productResolver,
         \MageSuite\PwaNotifications\Model\PermissionManagement $permissionManagement
-    )
-    {
+    ) {
         $this->customerSession = $customerSession;
         $this->backInStockSubscription = $backInStockSubscription;
         $this->storeManager = $storeManager;
@@ -81,6 +80,12 @@ class PushSubscriptionCreator
         $this->permissionManagement = $permissionManagement;
     }
 
+    /**
+     * @param $params
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function subscribe($params)
     {
         $storeId = $this->storeManager->getStore()->getId();
@@ -89,7 +94,7 @@ class PushSubscriptionCreator
 
         $deviceId = $this->session->getDeviceId();
 
-        if(empty($deviceId)) {
+        if (empty($deviceId)) {
             throw new \Magento\Framework\Exception\LocalizedException(__('Device capable of receiving push notifications is not registered.'));
         }
 
@@ -97,7 +102,7 @@ class PushSubscriptionCreator
 
         $product = $this->productResolver->resolve($params);
 
-        if($this->subscriptionExist($product->getId(), $deviceId, $storeId)){
+        if ($this->subscriptionExist($product->getId(), $deviceId, $storeId)) {
             throw new \Magento\Framework\Exception\AlreadyExistsException(__('You have already subscribed for a back-to-stock notification for this product.'));
         }
 
@@ -108,8 +113,7 @@ class PushSubscriptionCreator
             ->setStoreId($storeId)
             ->setNotificationChannel('push')
             ->setCustomerConfirmed(true)
-            ->setPwaDeviceId($deviceId)
-        ;
+            ->setPwaDeviceId($deviceId);
 
         $this->backInStockSubscriptionRepository->save($subscription);
 
