@@ -54,6 +54,6 @@ class PushNotificationSender
 
         $this->emulation->stopEnvironmentEmulation();
 
-        $this->sendByDevice->execute($deviceId, $notification, ['back_in_stock_notification']);
+        return $this->sendByDevice->execute($deviceId, $notification, ['back_in_stock_notification']);
     }
 }
