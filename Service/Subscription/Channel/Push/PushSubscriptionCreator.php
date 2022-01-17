@@ -56,6 +56,11 @@ class PushSubscriptionCreator
      */
     protected $permissionManagement;
 
+    /**
+     * @var \MageSuite\BackInStock\Helper\Configuration
+     */
+    protected $configuration;
+
     public function __construct(
         \Magento\Customer\Model\SessionFactory $customerSession,
         \MageSuite\BackInStock\Model\BackInStockSubscription $backInStockSubscription,
@@ -66,7 +71,8 @@ class PushSubscriptionCreator
         \MageSuite\PwaNotifications\Api\Data\NotificationInterfaceFactory $notificationFactory,
         \Magento\Store\Model\App\Emulation $emulation,
         \MageSuite\BackInStock\Service\Subscription\ProductResolver $productResolver,
-        \MageSuite\PwaNotifications\Model\PermissionManagement $permissionManagement
+        \MageSuite\PwaNotifications\Model\PermissionManagement $permissionManagement,
+        \MageSuite\BackInStock\Helper\Configuration $configuration
     ) {
         $this->customerSession = $customerSession;
         $this->backInStockSubscription = $backInStockSubscription;
@@ -78,6 +84,7 @@ class PushSubscriptionCreator
         $this->emulation = $emulation;
         $this->productResolver = $productResolver;
         $this->permissionManagement = $permissionManagement;
+        $this->configuration = $configuration;
     }
 
     /**
@@ -121,7 +128,7 @@ class PushSubscriptionCreator
 
         $notification = $this->notificationFactory->create();
         $notification->setTitle(__('Success'));
-        $notification->setBody(__('You are successfully subscribed for back in stock notification'));
+        $notification->setBody(__($this->configuration->getSuccessWithoutConfirmationMessage()));
 
         $this->emulation->stopEnvironmentEmulation();
 
