@@ -9,7 +9,7 @@
                     <argument name="button_accept_text" xsi:type="string" translate="true">Let me know by push notification</argument>
                     <argument name="show_decline_button" xsi:type="boolean">false</argument>
                 </arguments>
-                
+
                 <container name="product.backinstock.subscription.or.container" htmlTag="div" htmlClass="cs-product-stock-subscription__or" as="push.notification.hotspot.after">
                     <container name="product.backinstock.subscription.or_separator.container" htmlTag="p" htmlClass="cs-product-stock-subscription__or-separator">
                         <block class="Magento\Framework\View\Element\Text" name="product.backinstock.subscription.or_separator">
@@ -23,7 +23,7 @@
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <block name="push.notification.backinstock" template="MageSuite_PwaNotifications::js-init.phtml" ifconfig="pwa/general/is_enabled">
+            <block name="push.notification.backinstock" template="MageSuite_PwaNotifications::js-init.phtml" ifconfig="pwa/back_in_stock/allow_to_subscribe">
                 <arguments>
                     <argument name="configuration_helper" xsi:type="object">MageSuite\PwaNotifications\Helper\Configuration</argument>
                     <argument name="js_config" xsi:type="array">
