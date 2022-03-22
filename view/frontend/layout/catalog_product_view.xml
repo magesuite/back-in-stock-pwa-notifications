@@ -23,7 +23,7 @@
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <block name="push.notification.backinstock" template="MageSuite_PwaNotifications::js-init.phtml" ifconfig="pwa/permission/back_in_stock_notification">
+            <block name="push.notification.backinstock" template="MageSuite_PwaNotifications::js-init.phtml" ifconfig="pwa/back_in_stock/allow_to_subscribe">
                 <arguments>
                     <argument name="configuration_helper" xsi:type="object">MageSuite\PwaNotifications\Helper\Configuration</argument>
                     <argument name="js_config" xsi:type="array">
