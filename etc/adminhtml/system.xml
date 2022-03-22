@@ -2,13 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="pwa">
-            <group id="back_in_stock" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Back In Stock</label>
-                <depends>
-                    <field id="pwa/general/is_enabled">1</field>
-                </depends>
-                <field id="allow_to_subscribe" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Allow to subscribe</label>
+            <group id="permission">
+                <field id="back_in_stock_notification" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back in stock notification</label>
                     <source_model>\Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Allows customer to subscribe for push notifications.</comment>
                 </field>
