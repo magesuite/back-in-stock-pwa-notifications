@@ -2,9 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <pwa>
-            <permission>
-                <back_in_stock_notification>1</back_in_stock_notification>
-            </permission>
+            <back_in_stock>
+                <allow_to_subscribe>1</allow_to_subscribe>
+            </back_in_stock>
         </pwa>
     </default>
 </config>
