@@ -1,0 +1,16 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MageSuite_Changelog:etc/changelog.xsd">
+    <module id="MageSuite_BackInStockPwaNotifications" name="MageSuite_BackInStockPwaNotifications">
+        <changelog>
+            <tag version="1.1.4" date="2022-07-13">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Adjust OR block name and notification icon class</overview>
+                        <description>
+                            After changes in magesuite-pwa-notificatiosn module notification.panel wording
+                            is used instead of push-notification
+                        </description>
+                </entry>
+            </tag>
+        </changelog>
+    </module>
+</config>
