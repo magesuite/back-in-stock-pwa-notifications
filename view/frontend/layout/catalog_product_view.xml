@@ -4,13 +4,13 @@
         <referenceContainer name="product.backinstock.subscription.hotspot.aboveemail">
             <block name="bis.push.notification.main" template="MageSuite_PwaNotifications::notification-panel.phtml" after="-" ifconfig="pwa/general/is_enabled">
                 <arguments>
-                    <argument name="modifier" xsi:type="string">cs-push-notification--back-in-stock</argument>
+                    <argument name="modifier" xsi:type="string">cs-notification-panel--back-in-stock</argument>
                     <argument name="render_icons" xsi:type="boolean">false</argument>
                     <argument name="button_accept_text" xsi:type="string" translate="true">Let me know by push notification</argument>
                     <argument name="show_decline_button" xsi:type="boolean">false</argument>
                 </arguments>
 
-                <container name="product.backinstock.subscription.or.container" htmlTag="div" htmlClass="cs-product-stock-subscription__or" as="push.notification.hotspot.after">
+                <container name="product.backinstock.subscription.or.container" htmlTag="div" htmlClass="cs-product-stock-subscription__or" as="notification.panel.hotspot.after">
                     <container name="product.backinstock.subscription.or_separator.container" htmlTag="p" htmlClass="cs-product-stock-subscription__or-separator">
                         <block class="Magento\Framework\View\Element\Text" name="product.backinstock.subscription.or_separator">
                             <arguments>
